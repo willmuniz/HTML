@@ -1,0 +1,32 @@
+.main-q2 {
+    height: 200px;
+    width: 100%;
+    background-color: lightblue;
+    position: relative;
+  }
+  
+  .container-q2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+  
+  .div1 {
+    height: 20px;
+    width: 80px;
+    background-color: black;
+  }
+  
+  .div2 {
+    height: 20px;
+    width: 80px;
+    background-color: red;
+  }
+  
+  .div3 {
+    height: 20px;
+    width: 80px;
+    background-color: yellow;
+  }
+  

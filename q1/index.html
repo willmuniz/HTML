@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+  <title>Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="coluna">
+            <center> <div class="formulario">
+                <h2>Cadastro</h2>
+                <form id="formularioCadastro">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required><br><br>
+                    <button type="submit" class="button">Cadastrar</button>
+                </form>
+            </div></center>
+        </div>
+        <div class="coluna"><center>
+            <h2>Consulta</h2>
+            <table id="tabelaConsulta">
+                <thead>
+                    <tr>
+                        <th class="titulo">Nome</th>
+                        <th class="titulo">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div></center>
+    </div>
+
+    <script>
+        const formularioCadastro = document.getElementById('formularioCadastro');
+        const tabelaConsulta = document.getElementById('tabelaConsulta');
+        
+        formularioCadastro.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            
+            //Linha na tabela
+            const novaLinha = document.createElement('tr');
+            const celulaNome = document.createElement('td');
+            const celulaEmail = document.createElement('td');
+            celulaNome.textContent = nome;
+            celulaEmail.textContent = email;
+            
+            // Nova Linha
+            novaLinha.appendChild(celulaNome);
+            novaLinha.appendChild(celulaEmail);
+            tabelaConsulta.querySelector('tbody').appendChild(novaLinha);
+            
+            // Limpar o formulário
+            formularioCadastro.reset();
+        });
+    </script>
+
+</body>
+</html>
